@@ -3,7 +3,7 @@ import web3 from '../../ethereum/web3';
 import { Form, Button, Input, Message } from "semantic-ui-react";
 import Layout from "../../components/Layout";
 import factory from "../../ethereum/factory";
-//import { Router } from "../../routes";
+import { Router } from "../../routes";
 
 
 class CampaignNew extends Component {
@@ -23,7 +23,7 @@ this.setState({loading:true, errorMessage: ''});
     from: accounts[0]
   });
 
-//  Router.pushRoute('/');
+Router.pushRoute("/"); // redirect user to first page
 }catch (err){
   this.setState({errorMessage: err.message})
 }
