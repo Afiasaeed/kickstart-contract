@@ -40,7 +40,7 @@ class CampaignShow extends Component {
     },{
       header:minimumContribution,
       meta:"Minimum Contribution (wei)",
-      description: "you must contribute at least this uch way to be an approver",
+      description: "you must contribute at least this much way to be an approver",
       style: { overflowWrap: "break-word"}
 
     },
@@ -68,17 +68,27 @@ class CampaignShow extends Component {
       <Layout>
        <h3>Campaign detail </h3>
        <Grid>
+       <Grid.Row>
        <Grid.Column width={10}>
+
        {this.renderCards()}
-       <Link route={`/campaigns/${this.props.address}/requests`}>
-              <a>
-              <Button primary> View Requests </Button>
-       </a>
-       </Link>
+
               </Grid.Column>
-     <Grid.Column width={6}>
+
+             <Grid.Column width={6}>
        <ContributeForm address={this.props.address} />
          </Grid.Column>
+         </Grid.Row>
+
+          <Grid.Row>
+          <Grid.Column>
+         <Link route={`/campaigns/${this.props.address}/requests`}>
+                <a>
+                <Button primary> View Requests </Button>
+         </a>
+         </Link>
+         </Grid.Column>
+         </Grid.Row>
          </Grid>
        </Layout>
      );
